@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+     <ion-title>
+      <img alt="logo" id="header_logo" height="35" border-radius="20px" src="assets/picture/Logo.jpg">&nbsp;
+          <ion-text>Municipalidad de San Miguel de Tucumán</ion-text>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-text>Crear Cuenta</ion-text>
+  <ion-item>
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Confirmar Contraseña</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <ion-button expand="" class="shadow-dark" color="dark" (click)="Login()" text-align="center">Guardar</ion-button>
+    <ion-button expand="" class="shadow-dark" color="dark" (click)="Cancelar()" text-align="center">Cancelar</ion-button>
+</ion-content>

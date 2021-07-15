@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button>Back Button</ion-back-button>
+    </ion-buttons>
+     <ion-title>
+      <img alt="logo" id="header_logo" height="35" border-radius="20px" src="assets/picture/Logo.jpg">&nbsp;
+          <ion-text>Municipalidad de San Miguel de Tucumán</ion-text>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <img id="imagen1" src="assets/picture/PlazaIndependencia.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>08/07/2021</ion-card-subtitle>
+      <ion-card-title>Avanzan las obras de la Plaza Independencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      El secretario de Obras publicas, Alfredo Toscano, anuncio la instalación de un sistema de iluminación LED, mientras avanzan la construcción de nuevas veredas y caminerías, y la restauración de la “Estatua de la Libertad”, creada por la artista tucumana Lola Mora
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <img id="imagen2" src="assets/picture/Acto.png" />
+    <ion-card-header>
+      <ion-card-subtitle>09/07/2021</ion-card-subtitle>
+      <ion-card-title>Vendra el Presidente a Inaugurar la Plaza Independencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+       El presidente Alberto Fernandez vendra a San Miguel de Tucumán el proximo viernes para celebrar el Día de la Independencia, segun confirmo el Gobernador Juan Manzur. Inicialmente estaba previsto realizar el festejo por videoconferencia, como ocurrió el año pasado. Pero el gobernador logró que el Presidente venga brevemente a la provincia. 
+       "No serán muchos actos, sólo la visita a la Casa Histórica para rendir homenaje a los próceres de 1816", había expresado Manzur
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <img id="imagen3" src="assets/picture/Inauguracion.png" />
+    <ion-card-header>
+      <ion-card-subtitle>12/07/2021</ion-card-subtitle>
+      <ion-card-title>Esta noche se inaugura oficialmente la nueva Plaza Independencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Este lunes a las 20, la Municipalidad de San Miguel de Tucumán inaugurará oficialmente el principal paseo público de los tucumanos y que contará con la presencia del Arzobispo de la provincia, Carlos Sánchez. 
+    </ion-card-content>
+  </ion-card>
+  <ion-app>
+    <ion-nav root="nav-home"></ion-nav>
+  </ion-app>
+
+  <script>
+
+    customElements.define('nav-home', class NavHome extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar>
+              <ion-title>Back Button</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen>
+            <ion-list>
+            <ion-item onclick="navigateForward()">
+              Navigate Forward
+            </ion-item>
+            </ion-list>
+          </ion-content>
+        `;
+      }
+    });
+
+    const nav = document.querySelector('ion-nav');
+
+    function navigateForward() {
+      nav.push('nav-detail');
+    }
+
+    customElements.define('nav-detail', class NavDetail extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
+              </ion-buttons>
+              <ion-title>Page Two</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen class="ion-padding">
+            <p>Back-Button is displayed when there is history</p>
+          </ion-content>
+        `;
+      }
+    });
+  </script>
+</ion-content>

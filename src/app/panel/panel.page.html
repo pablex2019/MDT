@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+     <ion-title>
+      <img alt="logo" id="header_logo" height="35" border-radius="20px" src="assets/picture/Logo.jpg">&nbsp;
+          <ion-text>Municipalidad de San Miguel de Tucumán</ion-text>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+  <ion-content>    
+    <ion-text>Bienvenido Pablo</ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" (click)="Noticias()">Noticias</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" (click)="Solicitudes()">Solicitudes</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" (click)="Denuncias()">Denuncias</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" (click)="Talleres()">Talleres</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

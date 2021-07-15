@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <img alt="logo" id="header_logo" height="35" border-radius="20px" src="assets/picture/Logo.jpg">&nbsp;
+          <ion-text>Municipalidad de San Miguel de Tucumán</ion-text>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text>Denuncia</ion-text>
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Fotos/s</ion-label><br/>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let imagen of imagenes">
+          <img src="{{imagen}}" alt="" srcset="">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Ubicación</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <ion-button expand="" class="shadow-dark" color="dark" (click)="Login()" text-align="center">Guardar</ion-button>
+  <ion-app>
+    <ion-nav root="nav-home"></ion-nav>
+  </ion-app>
+
+  <script>
+
+    customElements.define('nav-home', class NavHome extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar>
+              <ion-title>Back Button</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen>
+            <ion-list>
+            <ion-item onclick="navigateForward()">
+              Navigate Forward
+            </ion-item>
+            </ion-list>
+          </ion-content>
+        `;
+      }
+    });
+
+    const nav = document.querySelector('ion-nav');
+
+    function navigateForward() {
+      nav.push('nav-detail');
+    }
+
+    customElements.define('nav-detail', class NavDetail extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-header translucent>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-back-button defaultHref="/"></ion-back-button>
+              </ion-buttons>
+              <ion-title>Page Two</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content fullscreen class="ion-padding">
+            <p>Back-Button is displayed when there is history</p>
+          </ion-content>
+        `;
+      }
+    });
+  </script>
+</ion-content>
